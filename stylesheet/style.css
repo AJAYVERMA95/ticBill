@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Aj';
+    src: url('../fonts/TimesNewRomanFont/times_new_roman-webfont.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('../fonts/TimesNewRomanFont/times\ new\ roman.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+  
+  @font-face {
+    font-family: 'Aj-Bold';
+    src: url('../fonts/TimesNewRomanFont/times_new_roman_bold-webfont.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('../fonts/TimesNewRomanFont/times\ new\ roman\ bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+  
+  .row.v_line {
+    overflow: hidden;
+  }
+
+  .row.v_line div[class^="col-"] + div[class^="col-"] {
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  form {
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 1%;
+  }
+  
+  .bill_info {
+    margin-top: 5%;
+    border-radius: 5px;
+    border-style: solid; 
+    border-width: 2px
+  }
+  
+  .tax-invoice-header-text {
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: black;
+  }

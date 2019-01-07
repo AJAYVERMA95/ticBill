@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/style.css" />    
+  </head>
+  <body>
+    <form style="display:none">
+      <div class="form-group">
+        <label for="b_name">BUYER'S NAME</label>
+        <input type="text" class="form-control" id="b_name" placeholder="Enter buyer's name">
+      </div>
+      <div class="form-group">
+        <label for="b_address">BUYER'S ADDRESS</label>
+        <input type="text" class="form-control" id="b_address" placeholder="Enter buyer's address">
+      </div>
+      <div class="form-group">
+        <label for="b_gstin">BUYER'S GSTIN</label>
+        <input type="text" class="form-control" id="b_gstin" placeholder="Enter buyer's gstin">
+      </div>
+      <div class="form-group">
+        <label for="b_state">BUYER'S STATE</label>
+        <input type="text" class="form-control" id="b_state" placeholder="Enter buyer's state">
+      </div>
+      <div class="form-group">
+        <label for="b_stateCode">BUYER'S STATE CODE</label>
+        <input type="text" class="form-control" id="b_stateCode" placeholder="Enter buyer's state code">
+      </div>
+      <div class="form-group">
+        <label for="s_invoice_number">INVOICE NUMBER</label>
+        <input type="text" class="form-control" id="s_invoice_number" placeholder="Enter invoice number">
+      </div>
+      <div class="form-group">
+        <label for="s_invoice_date">INVOICE DATE</label>
+        <input type="text" class="form-control" id="s_invoice_date" placeholder="Enter invoice date">
+      </div>
+      <div class="form-group">
+        <label for="s_order_number">ORDER NUMBER (IF ANY)</label>
+        <input type="text" class="form-control" id="s_order_number" placeholder="Enter order number (if any)">
+        <small id="s_order_number_help" class="form-text text-danger">If order number is not required. Please keep it blank.</small>
+      </div>
+      <div class="form-group">
+        <label for="s_order_date">ORDER DATE (IF ANY)</label>
+        <input type="text" class="form-control" id="s_order_date" placeholder="Enter order date (if any)">
+        <small id="s_order_date_help" class="form-text text-danger">If order date is not required. Please keep it blank.</small>
+      </div>
+      <div class="form-group">
+        <label for="dispatched_by">DISPATCHED BY (IF ANY)</label>
+        <input type="text" class="form-control" id="dispatched_by" placeholder="Enter dispatched by (if any)">
+        <small id="dispatched_by_help" class="form-text text-danger">If dispatched by is not required. Please keep it blank.</small>
+      </div>
+      <div class="form-group">
+        <label for="destination">DESTINATION (IF ANY)</label>
+        <input type="text" class="form-control" id="destination" placeholder="Enter destination (if any)">
+        <small id="destination_help" class="form-text text-danger">If destination is not required. Please keep it blank.</small>
+      </div>
+      <div class="form-group">
+        <label for="number_of_item">NUMBER OF ITEM</label>
+        <select class="form-control" id="number_of_item">
+          <option value="0">Select number of items</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="form-row" id="itemsInfo"></div>
+      <div class="form-group">
+        <label for="transporter_name">TRANSPORTER NAME</label>
+        <input type="text" class="form-control" id="transporter_name" placeholder="Enter transporter name">
+      </div>
+      <div class="form-group">
+        <label for="e_way_bill_number">E-WAY BILL NUMBER</label>
+        <input type="text" class="form-control" id="e_way_bill_number" placeholder="Enter e-way bill number">
+      </div>
+      <div class="form-group">
+        <label for="amount_in_words">AMOUNT IN WORDS</label>
+        <input type="text" class="form-control" id="amount_in_words" placeholder="Enter amount in words">
+      </div>
+      <div class="form-group">
+        <label for="cgst">CGST in %</label>
+        <input type="text" class="form-control" id="cgst" placeholder="Example: 12, 5">
+      </div>
+      <div class="form-group">
+        <label for="sgst">SGST in %</label>
+        <input type="text" class="form-control" id="sgst" placeholder="Example: 12, 5">
+      </div>
+      <div class="form-group">
+        <label for="igst">IGST in %</label>
+        <input type="text" class="form-control" id="igst" placeholder="Example: 12, 5">
+      </div>
+      <div class="form-group">
+        <label for="freight_charges">FREIGHT CHARGES (IF ANY)</label>
+        <input type="text" class="form-control" id="freight_charges" placeholder="Enter freight charges (if any)">
+        <small id="freight_charges_help" class="form-text text-danger">If NO extra freight charged. Please keep it blank.</small>
+      </div>
+      <!-- <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button> -->
+    </form>
+
+    <div class="container bill_info">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4 tax-invoice-header-text">
+              TAX INVOICE CUM CHALLAN
+            </div>
+            <div class="col-xs-4" style="text-align:right;">
+              Buyer's/Seller's/Transporter's  
+            </div>  
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="text-align:center;">
+              TECHNOMAC INDUSRIAL CONCERN
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12" style="border-style: solid; border-width: 1px"></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6" >
+              <div class="row" style="padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-12" style="text-align:left;">
+                  13, RAJENDRA SEN LANE, KOLKATA-700 006<br/>
+                  Near Perry Charan Girls School<br/>
+                  (Tarak Pramanik Road) Girish Park
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12" style="border-style: solid; border-width: 1px"></div>
+              </div>
+              <div class="row" style="padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-12" style="text-align:left;">
+                  GSTIN : 19AHPPV2833C1Z1
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12" style="border-style: solid; border-width: 1px"></div>
+              </div>
+              <div class="row" style="padding-top:5px;padding-bottom:5px;">
+                <div class="col-xs-8" style="text-align:left;">
+                  STATE : WEST BENGAL
+                </div>
+                <div class="col-xs-4" style="text-align:right;">
+                  CODE : 19
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6" style="text-align:right;border-left: 2px solid #000">
+              <div class="row">
+                <div class="col-xs-12" >
+                  Supplier and engineers of all kinds of Chain :- Conveyor, Roller, P.I.V, Silent, Crank, Elevator, Longpitch, S.S, Bush, Leaf, Attachment & Sprockets, Bearings, Gear Box, Coupling Material Handling Equipment, V & Conveyor Belts etc. 
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12" >
+                  Mob : 9883292228, 9831152377<br/>
+                  9339724695, (033) 22573627<br/>
+                  E-mail : technomacindustrial@gmail.com
+                </div>
+              </div>
+            </div>
+          </div>
+             
+          
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/jquery-3.2.1.slim.min.js" ></script>
+    <script src="../javascript/popper.min.js" ></script>
+    <script type="text/javascript" src='https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js' ></script>
+    <script src="../javascript/main.js" ></script>
+  </body>
+</html>
